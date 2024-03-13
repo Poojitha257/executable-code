@@ -1,0 +1,29 @@
+   ansible demo -b -m shell -a "useradd bala"
+   ansible demo -b -m shell -a "groupadd devops"
+   ansible demo -b -m shell -a "cat /etc/passwd"
+   ansible demo -b -m shell -a "cat /etc/group"
+
+   ansible demo -b -m user -a "name=kkbmurugan state=present"
+   ansible demo -b -m command -a "cat /etc/passwd"
+   ansible demo -b -m user -a "name=bala state=absent"
+
+   ansible demo -b -m group -a "name=devops state=present"
+   ansible demo -b -m command -a "cat /etc/group"
+   ansible demo -b -m group -a "name=devops state=absent"
+   ansible demo -b -m command -a "cat /etc/group"
+
+   ansible demo -b -m file -a "path=/home/ansible/kk state=directory"
+   ansible demo -b -m command -a "ls -a"
+   ansible demo -b -m file -a "path=/home/ansible/kk state=absent"
+   ansible demo -b -m command -a "ls -a"
+
+   ansible demo -b -m file -a "path=/home/ansible/kk.txt state=touch"
+   ansible demo -b -m shell -a "touch bmurugan.txt"
+   ansible demo -b -m command -a "ls -a"
+   ansible demo -b -m file -a "path=/home/ansible/kk.txt state=absent"
+   ansible demo -b -m shell -a "rm -rf bmurugan.txt"
+   ansible demo -b -m command -a "ls -a"
+
+   ansible demo -b -m shell -a "rm -rf *"
+   
+   

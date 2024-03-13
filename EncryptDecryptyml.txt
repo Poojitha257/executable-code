@@ -1,0 +1,4 @@
+ansible-vault encrypt loopys.yml
+ansible-valut view loops.yml
+ansible-vault edit loops.yml
+ansible-vault decrypt loops.yml

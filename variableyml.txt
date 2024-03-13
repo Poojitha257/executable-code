@@ -1,0 +1,11 @@
+---
+- name: variableplaybook
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+    pkgname: httpd
+  tasks:
+    - name: install httpd
+      action: yum name='{{pkgname}}' state=present

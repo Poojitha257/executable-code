@@ -1,0 +1,19 @@
+---
+- name: playbook
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: docker install
+      shell: sudo yum install docker -y
+    - name: docker version
+      shell: docker --version
+    - name: docker start
+      shell: systemctl start docker
+    - name: docker status
+      shell: systemctl status docker
+    - name: docker pull image
+      shell: docker pull nginx
+    - name: docker run container
+      shell: docker run -it -d -p 8000:80 nginx

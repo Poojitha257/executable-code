@@ -1,0 +1,19 @@
+---
+- name: playbook
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install httpd
+      shell: yum install httpd -y
+    - name: check httpd
+      shell: which httpd
+    - name: start httpd
+      shell: systemctl start httpd
+    - name: status httpd
+      shell: systemctl status httpd
+    - name: stop httpd
+      shell: systemctl stop httpd
+    - name: uninstall httpd
+      shell: yum remove httpd -y

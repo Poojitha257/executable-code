@@ -1,0 +1,12 @@
+ ansible demo -b -m ping
+ ansible demo -b -m shell -a "pwd"
+ ansible demo -b -m command -a "ls"
+ ansible demo -b -m setup
+ ansible demo -b -m shell -a "yum install httpd -y"
+ ansible demo -b -m command -a "yum install httpd -y"
+ ansible demo -b -m yum -a "pkg=httpd state=present"
+ ansible demo -b -m shell -a "which httpd"
+ ansible demo -b -m command -a "systemctl start httpd"
+ ansible demo -b -m service -a "name=httpd state=started"
+ ansible demo -b -m service -a "name=httpd state=stopped"
+ ansible demo -b -m yum -a "pkg=httpd state=absent"

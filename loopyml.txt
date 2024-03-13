@@ -1,0 +1,14 @@
+---
+- name: looping in ansible
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: create user
+      user: name='{{item}}' state=present
+      with_items:
+        - developer
+        - devops_engg
+        - architecture
+        - cloud_engineer

@@ -1,0 +1,14 @@
+ ansible demo -a "ls -a"
+ ansible demo -a "pwd"
+
+ ansible demo -a "sudo yum install httpd -y"
+ ansible demo -a "sudo which httpd"
+ ansible demo -a "systemctl status httpd"
+ ansible demo -a "sudo systemctl start httpd"
+ ansible demo -a "sudo systemctl status httpd"
+ ansible demo -a "sudo systemctl stop httpd"
+ ansible demo -a "systemctl status httpd"
+ ansible demo -a "sudo yum remove httpd -y"
+ ansible demo -a "sudo which httpd"
+ ansible demo -b -a "yum install httpd -y"  (b -> become or sudo priority)
+ ansible demo -b -a "yum remove httpd -y"

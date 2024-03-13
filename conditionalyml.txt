@@ -1,0 +1,13 @@
+---
+- name: conditional in ansible
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install httpd for dabian family
+      command: apt_get install apache2 -y
+      when: ansible_os_family=="Dabian"
+    - name: install httpd for redhat family
+      command: yum install httpd -y
+      when: ansible_os_family=="RedHat"

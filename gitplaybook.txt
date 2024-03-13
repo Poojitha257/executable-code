@@ -1,0 +1,13 @@
+---
+- name: playbook
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: git download
+      shell: yum install git -y
+    - name: git version
+      shell: git --version
+    - name: git clone
+      shell: git clone https://github.com/BalamuruganKubenthiran/IBM.git
